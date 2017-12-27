@@ -11,7 +11,7 @@ import pages.MyNottinghamLoginPage;
  * Created by Senthil kumar
  */
 
-public class MyNottinghamCRMCaseWOAttach {
+public class MyNottinghamCRMCaseWOAttachTest {
 
     private MyNottinghamLoginPage mynottinghamloginpage = new MyNottinghamLoginPage();
     private MyNottinghamHomePage mynottinghamhomepage = new MyNottinghamHomePage();

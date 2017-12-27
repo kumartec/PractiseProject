@@ -3,7 +3,6 @@ package pages;
 import framework.WebBrowser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
@@ -100,7 +99,6 @@ public class MyNottinghamHomePage extends WebBrowser {
             clickHomePage();
             WebBrowser.getWebdriverWait();
             WebBrowser.getWebdriverWaitObject().until(ExpectedConditions.presenceOfElementLocated(By.id("UN_SUPPORT_1"))).click();
-            //((JavascriptExecutor)driver).executeScript("document.getElementById('UN_SUPPORT_1').click();");
             System.out.println(WebBrowser.getWebdriverWaitObject().until(ExpectedConditions.presenceOfElementLocated(By.id("EOTL_SS_HDR_TITLE#EOTL_SS_TITLE"))).getText());
 
         }
