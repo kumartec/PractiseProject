@@ -6,7 +6,9 @@ import java.util.Properties;
 public class AppProperties {
 
     private String PROP_FILE = null;
-    public static String TestOnlineBaseURL;
+    public static String TestUKURL;
+    public static String TestMalaysiaURL;
+    public static String TestChinaURL;
     public static AppProperties appprop;
 
     public AppProperties() {
@@ -18,12 +20,15 @@ public class AppProperties {
             Properties prop = new Properties();
             prop.load(is);
 
-            AppProperties.TestOnlineBaseURL = prop.getProperty("sit.baseurl");
+            AppProperties.TestUKURL = prop.getProperty("sit.ukurl");
 
+            AppProperties.TestMalaysiaURL = prop.getProperty("sit.malaysiaurl");
+
+            AppProperties.TestChinaURL = prop.getProperty("sit.chinaurl");
 
             is.close();
+            //System.out.println("AppProperties.TestMalaysiaURL URL = "+ AppProperties.TestMalaysiaURL);
             System.out.println("Reading and loading App Properties successful");
-            System.out.println("TestOnlineBaseURL = "+AppProperties.TestOnlineBaseURL);
         } catch (Exception e) {
             System.out.println("Failed to read from " + PROP_FILE + " file."
                     + "\n Stack :" + e);

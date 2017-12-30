@@ -19,7 +19,7 @@ public class MyNottinghamCRMCaseWOAttachTest {
 
     @Test
     public void loginTest(){
-        openwebpage.openMyNottinghamUkLoginPage();
+        openwebpage.openMyNottinghamLoginPage("UK");
         mynottinghamloginpage.enterLoginDetails("khay6hkd", "password1");
         mynottinghamloginpage.clickloginbutton();
 
