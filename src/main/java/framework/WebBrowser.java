@@ -1,5 +1,6 @@
 package framework;
 
+import common.ConstantValue;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -13,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-public class WebBrowser {
+public class WebBrowser extends ConstantValue {
 
     public static boolean javascriptEnabled = true;
     public static WebDriver driver;
@@ -162,3 +163,4 @@ public class WebBrowser {
         }
     }
 }
+
