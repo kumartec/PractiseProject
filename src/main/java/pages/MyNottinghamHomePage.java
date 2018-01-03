@@ -3,7 +3,9 @@ package pages;
 import framework.WebBrowser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
@@ -64,6 +66,45 @@ public class MyNottinghamHomePage extends WebBrowser {
             ((JavascriptExecutor)driver).executeScript("document.getElementById('UN_CASE_LIST2_2.00').click();");
             WebBrowser.getWebdriverWaitObject().until(ExpectedConditions.presenceOfElementLocated(By.id("UN_CASE_SMUMMARY"))).sendKeys(caseText);
             WebBrowser.getWebdriverWaitObject().until(ExpectedConditions.presenceOfElementLocated(By.id("UN_SRVC_REQ_COMMENTS"))).sendKeys(caseText);
+            WebBrowser.getWebdriverWaitObject().until(ExpectedConditions.presenceOfElementLocated(By.id("saveSrvcReq"))).click();
+            WebBrowser.getWebdriverWaitObject().until(ExpectedConditions.presenceOfElementLocated(By.linkText("×"))).click();
+            clickSupportCaseLink(timeStamp);
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Something went wrong in One CRM case creation");
+        }
+    }
+
+    public void selectTypeAndSubtypeForOneAttachmentCaseCreation (){
+        try {
+            String timeStamp = currentSystemTime();
+            String caseText = "Test Auto - Details for One Case Creation "+timeStamp;
+            System.out.println(caseText);
+            WebBrowser.getWebdriverWait();
+            ((JavascriptExecutor)driver).executeScript("document.getElementById('UN_CASE_LIST1_4.00').click();");
+            WebBrowser.getWebdriverWait();
+            ((JavascriptExecutor)driver).executeScript("document.getElementById('UN_CASE_LIST2_1.00').click();");
+            WebBrowser.getWebdriverWaitObject().until(ExpectedConditions.presenceOfElementLocated(By.id("UN_CASE_SMUMMARY"))).sendKeys(caseText);
+            WebBrowser.getWebdriverWaitObject().until(ExpectedConditions.presenceOfElementLocated(By.id("UN_SRVC_REQ_COMMENTS"))).sendKeys(caseText);
+            WebBrowser.getWebdriverWaitObject().until(ExpectedConditions.presenceOfElementLocated(By.id("addAttachment"))).click();
+            //WebBrowser.driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
+            WebBrowser.getWebdriverWait();
+            String winHandleBefore = driver.getWindowHandle();
+            for(String winHandle : driver.getWindowHandles()){
+                driver.switchTo().window(winHandle);
+                System.out.println(driver.getTitle());
+                WebBrowser.getWebdriverWait();
+                //((JavascriptExecutor)driver).executeScript("document.getElementById('UN_CASETYPE_WRK_ATTACHADD$0').click();");
+                WebBrowser.getWebdriverWaitObject().until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[value='Attach']"))).click();
+                //WebBrowser.getWebdriverWaitObject().until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='win0divUN_CASETYPE_WRK_VIEW_ALL$0']"))).click();
+                //WebBrowser.getWebdriverWaitObject().until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='UN_CASETYPE_WRK_DONE']']"))).click();
+            }
+            //WebBrowser.getWebdriverWaitObject().until(ExpectedConditions.presenceOfElementLocated(By.id("UN_CASETYPE_WRK_ATTACHADD$0"))).click();
+            driver.switchTo().window(winHandleBefore);
+            /*Actions action= new Actions(driver);
+            action.keyDown(Keys.CONTROL).sendKeys(Keys.TAB).build().perform();*/
             WebBrowser.getWebdriverWaitObject().until(ExpectedConditions.presenceOfElementLocated(By.id("saveSrvcReq"))).click();
             WebBrowser.getWebdriverWaitObject().until(ExpectedConditions.presenceOfElementLocated(By.linkText("×"))).click();
             clickSupportCaseLink(timeStamp);

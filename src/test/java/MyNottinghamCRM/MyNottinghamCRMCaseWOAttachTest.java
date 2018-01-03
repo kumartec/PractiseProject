@@ -8,7 +8,7 @@ import pages.MyNottinghamHomePage;
  * Created by Senthil kumar
  */
 
-public class MyNottinghamCRMCaseWOAttachTest extends BaseLoginTest {
+public class MyNottinghamCRMCaseWOAttachTest extends BaseTest {
 
     private MyNottinghamHomePage mynottinghamhomepage = new MyNottinghamHomePage();
 

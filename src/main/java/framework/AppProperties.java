@@ -9,6 +9,7 @@ public class AppProperties {
     public static String TestUKURL;
     public static String TestMalaysiaURL;
     public static String TestChinaURL;
+    public static String TestUKAccURL;
     public static AppProperties appprop;
 
     public AppProperties() {
@@ -25,6 +26,8 @@ public class AppProperties {
             AppProperties.TestMalaysiaURL = prop.getProperty("sit.malaysiaurl");
 
             AppProperties.TestChinaURL = prop.getProperty("sit.chinaurl");
+
+            AppProperties.TestUKAccURL = prop.getProperty("sit.ukaccurl");
 
             is.close();
             //System.out.println("AppProperties.TestMalaysiaURL URL = "+ AppProperties.TestMalaysiaURL);

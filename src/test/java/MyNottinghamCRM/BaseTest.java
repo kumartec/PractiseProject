@@ -9,7 +9,7 @@ import pages.MyNottinghamLoginPage;
  * Created by Senthil kumar
  */
 
-public class BaseLoginTest {
+public class BaseTest {
 
     private MyNottinghamLoginPage mynottinghamloginpage = new MyNottinghamLoginPage();
     private InitialiseWebPage openwebpage = new InitialiseWebPage();
@@ -32,6 +32,17 @@ public class BaseLoginTest {
         openwebpage.openMyNottinghamLoginPage("China");
         mynottinghamloginpage.enterLoginDetails("hexgb1", "Password1!");
         mynottinghamloginpage.clickloginbutton();
+
+    }
+
+    public void clickUKApplyCourse(){
+        openwebpage.openMyNottinghamLoginPage("UK");
+        mynottinghamloginpage.clickUKApplyCoursebutton();
+
+    }
+
+    public void clickUKAccountCreation(){
+        openwebpage.openMyNottinghamLoginPage("UKAcc");
 
     }
 

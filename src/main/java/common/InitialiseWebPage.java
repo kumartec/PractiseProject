@@ -22,6 +22,10 @@ public class InitialiseWebPage extends WebBrowser {
             URL = AppProperties.getAppProperties().TestChinaURL;
             System.out.println("China URL to open = " + URL);
             driver().get(URL);
+        } else if (CampusName == "UKAcc") {
+            URL = AppProperties.getAppProperties().TestUKAccURL;
+            System.out.println("UK Account creation URL to open = " + URL);
+            driver().get(URL);
         }
     }
 

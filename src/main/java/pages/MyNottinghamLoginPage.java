@@ -43,6 +43,21 @@ public class MyNottinghamLoginPage extends WebBrowser {
         }
     }
 
+    public void clickUKApplyCoursebutton()
+    {
+
+        try {
+
+            WebBrowser.getWebdriverWaitObject().until(ExpectedConditions.presenceOfElementLocated(By.id("sgnup"))).click();
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Something went wrong");
+        }
+    }
+
+
     public void quitBrowser(){
 
         WebBrowser.closeBrowser();
